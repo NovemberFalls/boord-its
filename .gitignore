@@ -3,3 +3,7 @@ Thumbs.db
 node_modules/
 .env
 .env.*
+
+# Raw source files (too large for git)
+Music/
+Images/

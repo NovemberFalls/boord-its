@@ -22,6 +22,8 @@
     </div>
     <div class="nav-links">
       <a href="#stack">Stack</a>
+      <a href="#music">Music</a>
+      <a href="#gallery">Gallery</a>
       <a href="#showcase">Showcase</a>
       <a href="#about">About</a>
       <a href="https://l2karma.org" class="nav-data-link" target="_blank">L2Karma &rarr;</a>
@@ -107,25 +109,168 @@
     </div>
   </section>
 
+  <!-- Music Player -->
+  <section class="music" id="music">
+    <h2 class="section-title"><span class="accent">#</span> Music</h2>
+    <p class="section-sub">AI-composed tracks made with Suno. Genre-fluid. Always experimenting.</p>
+
+    <!-- Genre Filter -->
+    <div class="genre-filters">
+      <button class="genre-btn active" data-genre="all">All</button>
+      <button class="genre-btn" data-genre="edm">EDM</button>
+      <button class="genre-btn" data-genre="for-my-wife">For My Wife</button>
+      <button class="genre-btn" data-genre="melodic-indie">Melodic Indie</button>
+      <button class="genre-btn" data-genre="rock">Rock</button>
+    </div>
+
+    <!-- Now Playing -->
+    <div class="now-playing" id="nowPlaying">
+      <div class="np-info">
+        <span class="np-label">Now Playing</span>
+        <span class="np-title" id="npTitle">Select a track</span>
+        <span class="np-genre" id="npGenre"></span>
+      </div>
+      <div class="np-controls">
+        <button class="np-btn" id="prevBtn" title="Previous">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button class="np-btn np-play" id="playBtn" title="Play">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="np-btn" id="nextBtn" title="Next">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+      </div>
+      <div class="np-progress">
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-times">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Track List -->
+    <div class="track-list" id="trackList">
+      <div class="track" data-src="assets/music/edm/duh-duh-duh-duh.mp3" data-genre="edm">
+        <span class="track-num">01</span>
+        <div class="track-info">
+          <span class="track-name">Duh Duh Duh Duh</span>
+          <span class="track-genre">EDM</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+      <div class="track" data-src="assets/music/edm/even-after-midnight.mp3" data-genre="edm">
+        <span class="track-num">02</span>
+        <div class="track-info">
+          <span class="track-name">Even After Midnight</span>
+          <span class="track-genre">EDM</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+      <div class="track" data-src="assets/music/edm/still-into-you.mp3" data-genre="edm">
+        <span class="track-num">03</span>
+        <div class="track-info">
+          <span class="track-name">Still Into You</span>
+          <span class="track-genre">EDM</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+      <div class="track" data-src="assets/music/edm/still-into-you-edm-rework.mp3" data-genre="edm">
+        <span class="track-num">04</span>
+        <div class="track-info">
+          <span class="track-name">Still Into You (EDM Rework)</span>
+          <span class="track-genre">EDM</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+      <div class="track" data-src="assets/music/for-my-wife/recovery.mp3" data-genre="for-my-wife">
+        <span class="track-num">05</span>
+        <div class="track-info">
+          <span class="track-name">Recovery</span>
+          <span class="track-genre">For My Wife</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+      <div class="track" data-src="assets/music/for-my-wife/seven-years.mp3" data-genre="for-my-wife">
+        <span class="track-num">06</span>
+        <div class="track-info">
+          <span class="track-name">Seven Years</span>
+          <span class="track-genre">For My Wife</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+      <div class="track" data-src="assets/music/for-my-wife/wedding.mp3" data-genre="for-my-wife">
+        <span class="track-num">07</span>
+        <div class="track-info">
+          <span class="track-name">Wedding</span>
+          <span class="track-genre">For My Wife</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+      <div class="track" data-src="assets/music/melodic-indie/some-days-i-cope.mp3" data-genre="melodic-indie">
+        <span class="track-num">08</span>
+        <div class="track-info">
+          <span class="track-name">Some Days I Cope</span>
+          <span class="track-genre">Melodic Indie</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+      <div class="track" data-src="assets/music/rock/still-i-stand.mp3" data-genre="rock">
+        <span class="track-num">09</span>
+        <div class="track-info">
+          <span class="track-name">Still I Stand</span>
+          <span class="track-genre">Rock</span>
+        </div>
+        <span class="track-play">&#9654;</span>
+      </div>
+    </div>
+    <audio id="audioPlayer" preload="none"></audio>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="gallery">
+    <h2 class="section-title"><span class="accent">#</span> Visuals</h2>
+    <p class="section-sub">Midjourney creations. Characters, concepts, and visual experiments.</p>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item" data-title="Ornate Mechanical Archer"><img src="assets/images/characters/character-01.jpg" alt="Black human male archer with ornate mechanical bow" loading="lazy"></div>
+      <div class="gallery-item" data-title="Rolling the Dice"><img src="assets/images/characters/character-02.jpg" alt="Digital illustration of someone rolling dice" loading="lazy"></div>
+      <div class="gallery-item" data-title="Elf Warrior"><img src="assets/images/characters/character-03.jpg" alt="Female elf warrior anime style" loading="lazy"></div>
+      <div class="gallery-item" data-title="High Fantasy Formal"><img src="assets/images/characters/character-04.jpg" alt="Female in high fantasy formal attire" loading="lazy"></div>
+      <div class="gallery-item" data-title="Orc Barbarian"><img src="assets/images/characters/character-05.jpg" alt="Green Orc barbarian covered in blood" loading="lazy"></div>
+      <div class="gallery-item" data-title="Orc She-Warrior"><img src="assets/images/characters/character-06.jpg" alt="Green Orc female barbarian" loading="lazy"></div>
+      <div class="gallery-item" data-title="Holy Cleric"><img src="assets/images/characters/character-07.jpg" alt="Human male cleric casting holy spell" loading="lazy"></div>
+      <div class="gallery-item" data-title="Armored Mage"><img src="assets/images/characters/character-08.jpg" alt="Human male mage in armor with staff" loading="lazy"></div>
+      <div class="gallery-item" data-title="Space Marine Healer"><img src="assets/images/characters/character-09.jpg" alt="Warhammer 40k space marine healer" loading="lazy"></div>
+      <div class="gallery-item" data-title="Robed Marine"><img src="assets/images/characters/character-10.jpg" alt="Space marine in robes and cloak" loading="lazy"></div>
+      <div class="gallery-item" data-title="Librarian"><img src="assets/images/characters/character-11.jpg" alt="Space marine librarian" loading="lazy"></div>
+      <div class="gallery-item" data-title="Power Armor Warrior"><img src="assets/images/characters/character-12.jpg" alt="Human warrior with power armor and longsword" loading="lazy"></div>
+      <div class="gallery-item" data-title="Spellbook Wizard"><img src="assets/images/characters/character-13.jpg" alt="Human wizard holding spell book" loading="lazy"></div>
+      <div class="gallery-item" data-title="Whimsical Wizard"><img src="assets/images/characters/character-14.jpg" alt="Human wizard with whimsical staff" loading="lazy"></div>
+      <div class="gallery-item" data-title="Warforged"><img src="assets/images/characters/character-15.jpg" alt="Warforged in action pose anime style" loading="lazy"></div>
+      <div class="gallery-item" data-title="Warforged Female"><img src="assets/images/characters/character-16.jpg" alt="Warforged female in action pose" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose">&times;</button>
+    <button class="lb-prev" id="lbPrev">&#8249;</button>
+    <button class="lb-next" id="lbNext">&#8250;</button>
+    <div class="lb-content">
+      <img id="lbImage" src="" alt="">
+      <p class="lb-title" id="lbTitle"></p>
+    </div>
+  </div>
+
   <!-- Showcase -->
   <section class="showcase" id="showcase">
     <h2 class="section-title"><span class="accent">#</span> Showcase</h2>
-    <p class="section-sub">Things we've made. Things we're making.</p>
+    <p class="section-sub">Things we've built. Things we're building.</p>
     <div class="showcase-grid">
-
-      <div class="showcase-item">
-        <div class="showcase-badge">Music</div>
-        <h3>Original Tracks</h3>
-        <p>AI-composed music created through Suno. Genre-fluid. Always experimenting.</p>
-        <span class="showcase-link">Coming soon &rarr;</span>
-      </div>
-
-      <div class="showcase-item">
-        <div class="showcase-badge">Visuals</div>
-        <h3>Image Gallery</h3>
-        <p>Midjourney creations. Concept art, branding experiments, and visual exploration.</p>
-        <span class="showcase-link">Coming soon &rarr;</span>
-      </div>
 
       <div class="showcase-item featured">
         <div class="showcase-badge badge-data">Web</div>
