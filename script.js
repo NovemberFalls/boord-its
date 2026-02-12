@@ -171,7 +171,7 @@
     'midjourney.create("neon cityscape")',
     'claude.build("landing_page")',
     'bits.ship("everything")',
-    'pipeline.run("etl_daily")',
+    'l2karma.deploy("game_server")',
   ];
 
   const el = document.getElementById('typewriter');
