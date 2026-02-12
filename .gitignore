@@ -7,3 +7,7 @@ node_modules/
 # Raw source files (too large for git)
 Music/
 Images/
+
+# Build/deploy artifacts
+public/
+.wranglerignore
