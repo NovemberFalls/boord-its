@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bits, LLC | AI-Powered Creative Lab</title>
+  <meta name="description" content="Bits, LLC - A creative lab exploring music, visuals, web experiences, and data through AI.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="nodeGraph"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <span class="logo-bracket">{</span>
+      <span class="logo-text">bits</span>
+      <span class="logo-bracket">}</span>
+    </div>
+    <div class="nav-links">
+      <a href="#stack">Stack</a>
+      <a href="#showcase">Showcase</a>
+      <a href="#about">About</a>
+      <a href="https://carrot.boord-its.com" class="nav-data-link" target="_blank">Data &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">// creative lab</p>
+      <h1 class="hero-title">
+        We build with <span class="glow">AI</span>.
+      </h1>
+      <p class="hero-sub">
+        Music. Visuals. Web. Data.<br>
+        One-person lab. Infinite leverage.
+      </p>
+      <div class="hero-prompt">
+        <span class="prompt-caret">&gt;</span>
+        <span class="prompt-text" id="typewriter"></span>
+        <span class="prompt-cursor">|</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack -->
+  <section class="stack" id="stack">
+    <h2 class="section-title"><span class="accent">#</span> The Stack</h2>
+    <p class="section-sub">Every tool has a purpose. Here's what powers the lab.</p>
+    <div class="stack-grid">
+
+      <div class="stack-card" data-tool="suno">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 18V5l12-2v13"/>
+            <circle cx="6" cy="18" r="3"/>
+            <circle cx="18" cy="16" r="3"/>
+          </svg>
+        </div>
+        <h3>Suno</h3>
+        <p class="card-role">Music</p>
+        <p class="card-desc">AI-generated tracks. From concept to full production in minutes.</p>
+      </div>
+
+      <div class="stack-card" data-tool="midjourney">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+        </div>
+        <h3>Midjourney</h3>
+        <p class="card-role">Visuals</p>
+        <p class="card-desc">Stunning imagery and visual concepts brought to life through prompts.</p>
+      </div>
+
+      <div class="stack-card" data-tool="claude">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Claude</h3>
+        <p class="card-role">Everything</p>
+        <p class="card-desc">The backbone. Code, copy, architecture, strategy. Couldn't survive without it.</p>
+      </div>
+
+      <div class="stack-card" data-tool="gpt">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h3>GPT</h3>
+        <p class="card-role">Utility</p>
+        <p class="card-desc">Specialized tasks and second opinions. Another tool in the belt.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase" id="showcase">
+    <h2 class="section-title"><span class="accent">#</span> Showcase</h2>
+    <p class="section-sub">Things we've made. Things we're making.</p>
+    <div class="showcase-grid">
+
+      <div class="showcase-item">
+        <div class="showcase-badge">Music</div>
+        <h3>Original Tracks</h3>
+        <p>AI-composed music created through Suno. Genre-fluid. Always experimenting.</p>
+        <span class="showcase-link">Coming soon &rarr;</span>
+      </div>
+
+      <div class="showcase-item">
+        <div class="showcase-badge">Visuals</div>
+        <h3>Image Gallery</h3>
+        <p>Midjourney creations. Concept art, branding experiments, and visual exploration.</p>
+        <span class="showcase-link">Coming soon &rarr;</span>
+      </div>
+
+      <div class="showcase-item">
+        <div class="showcase-badge">Web</div>
+        <h3>Web Experiences</h3>
+        <p>Claude-built sites and tools. From landing pages to full-stack applications.</p>
+        <span class="showcase-link">Coming soon &rarr;</span>
+      </div>
+
+      <div class="showcase-item featured">
+        <div class="showcase-badge badge-data">Data</div>
+        <h3>Data Pipelines</h3>
+        <p>Real-time pipeline monitoring. Architecture that runs in production.</p>
+        <a href="https://carrot.boord-its.com" target="_blank" class="showcase-link live">Explore &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2 class="section-title"><span class="accent">#</span> About</h2>
+      <div class="about-text">
+        <p>
+          <strong>Bits, LLC</strong> is a one-person creative lab built on the belief that
+          AI doesn't replace creativity &mdash; it amplifies it.
+        </p>
+        <p>
+          We make music with Suno. We create visuals with Midjourney. We build
+          web experiences and architect systems with Claude. We use every tool
+          that makes us faster, sharper, and more expressive.
+        </p>
+        <p class="about-tagline">
+          Small team. Big leverage. Always building.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-bracket">{</span>
+        <span class="logo-text">bits</span>
+        <span class="logo-bracket">}</span>
+        <span class="footer-llc">, llc</span>
+      </div>
+      <p class="footer-copy">&copy; 2025 Bits, LLC. Built with AI.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
