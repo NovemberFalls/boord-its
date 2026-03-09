@@ -7,8 +7,8 @@
   },
   "routes": [
     {
-      "pattern": "boord-its.com",
-      "custom_domain": true
+      "pattern": "boord-its.com/*",
+      "zone_name": "boord-its.com"
     }
   ]
 }
