@@ -26,6 +26,9 @@
       <a href="#gallery">Gallery</a>
       <a href="#showcase">Showcase</a>
       <a href="#about">About</a>
+      <button class="theme-toggle" id="themeToggle" title="Switch theme">
+        <span id="themeIcon">&#9790;</span>
+      </button>
       <a href="https://l2karma.org" class="nav-data-link" target="_blank">L2Karma &rarr;</a>
     </div>
   </nav>
@@ -273,17 +276,80 @@
     <div class="showcase-grid">
 
       <div class="showcase-item featured">
-        <div class="showcase-badge badge-data">Web</div>
-        <h3>Web Experiences</h3>
-        <p>Claude-built sites and tools. L2Karma.org &mdash; a Lineage 2 game server with wiki, parse, and community tools.</p>
+        <div class="showcase-badge badge-platform">Platform</div>
+        <h3>Order</h3>
+        <p>Next-gen communication platform built for performance, privacy, and extensibility. A Discord replacement designed from the ground up.</p>
+        <div class="showcase-tags">
+          <span class="showcase-tag">Rust</span>
+          <span class="showcase-tag">SolidJS</span>
+          <span class="showcase-tag">Tauri</span>
+          <span class="showcase-tag">LiveKit</span>
+          <span class="showcase-tag">PostgreSQL</span>
+          <span class="showcase-tag">ScyllaDB</span>
+          <span class="showcase-tag">Redis</span>
+          <span class="showcase-tag">NATS</span>
+        </div>
+        <div class="showcase-modules">
+          <span class="showcase-module">Forum</span>
+          <span class="showcase-module">Wiki</span>
+          <span class="showcase-module">Kanban</span>
+          <span class="showcase-module">Calendar</span>
+          <span class="showcase-module">Voice/Video</span>
+          <span class="showcase-module">Character Engine</span>
+        </div>
+        <a href="https://order.boord-its.com" target="_blank" class="showcase-link live">Visit Order &rarr;</a>
+      </div>
+
+      <div class="showcase-item">
+        <div class="showcase-badge badge-platform">Platform</div>
+        <h3>Character Engine</h3>
+        <p>Conversational AI that lets you talk with characters you'd never otherwise meet. It can also learn about you through guided conversations, building an emulation that helps you rubber-duck ideas &mdash; or leaves a lasting imprint for the people you love.</p>
+        <div class="showcase-tags">
+          <span class="showcase-tag">AI</span>
+          <span class="showcase-tag">Conversational</span>
+          <span class="showcase-tag">Emulation</span>
+          <span class="showcase-tag">Memory</span>
+        </div>
+        <div class="showcase-modules">
+          <span class="showcase-module">Character Conversations</span>
+          <span class="showcase-module">Self-Discovery &amp; Training</span>
+          <span class="showcase-module">Personal Emulation</span>
+          <span class="showcase-module">Digital Imprint</span>
+        </div>
+        <span class="showcase-link soon">Coming soon &rarr;</span>
+      </div>
+
+      <div class="showcase-item">
+        <div class="showcase-badge badge-data">Data</div>
+        <h3>Data Pipelines</h3>
+        <p>Production ETL orchestration integrating POS systems, loyalty platforms, financial reporting tools, and cloud services. Real-time monitoring dashboard and AI-powered report generation.</p>
+        <div class="showcase-tags">
+          <span class="showcase-tag">POS Systems</span>
+          <span class="showcase-tag">Loyalty APIs</span>
+          <span class="showcase-tag">BI Platforms</span>
+          <span class="showcase-tag">Cloud Services</span>
+          <span class="showcase-tag">Office 365</span>
+        </div>
+        <div class="showcase-modules">
+          <span class="showcase-module">6-Step Async Pipeline</span>
+          <span class="showcase-module">PipelineMonitor Dashboard</span>
+          <span class="showcase-module">AI Report Generator</span>
+        </div>
+        <span class="showcase-link">Internal tooling</span>
+      </div>
+
+      <div class="showcase-item">
+        <div class="showcase-badge badge-web">Web</div>
+        <h3>L2Karma</h3>
+        <p>Claude-built Lineage 2 game server with wiki, parse, and community tools.</p>
         <a href="https://l2karma.org" target="_blank" class="showcase-link live">Visit L2Karma &rarr;</a>
       </div>
 
       <div class="showcase-item">
-        <div class="showcase-badge">Data</div>
-        <h3>Data Pipelines</h3>
-        <p>ETL orchestration, real-time monitoring, and production-grade data architecture.</p>
-        <span class="showcase-link">Coming soon &rarr;</span>
+        <div class="showcase-badge badge-fiction">Fiction</div>
+        <h3>Duskfall</h3>
+        <p>Grimdark siege fantasy.</p>
+        <span class="showcase-link soon">Coming soon &rarr;</span>
       </div>
 
     </div>
@@ -319,7 +385,7 @@
         <span class="logo-bracket">}</span>
         <span class="footer-llc">, llc</span>
       </div>
-      <p class="footer-copy">&copy; 2025 Bits, LLC. Built with AI.</p>
+      <p class="footer-copy">&copy; 2025&ndash;2026 Bits, LLC. Built with AI.</p>
     </div>
   </footer>
 

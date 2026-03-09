@@ -20,9 +20,79 @@
   --border: #2a2a3a;
   --border-hover: #3a3a50;
 
+  --nav-bg: rgba(10, 10, 15, 0.85);
+
   /* Typography */
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==========================================================================
+   Theme: Light
+   ========================================================================== */
+
+[data-theme="light"] {
+  --bg-primary: #f5f5f7;
+  --bg-secondary: #eaeaef;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f0f5;
+
+  --text-primary: #1a1a2e;
+  --text-secondary: #555570;
+  --text-muted: #8888a0;
+
+  --accent: #c48a0a;
+  --accent-glow: #c48a0a44;
+  --accent-dim: #c48a0a22;
+
+  --border: #d0d0dd;
+  --border-hover: #b0b0c0;
+
+  --nav-bg: rgba(245, 245, 247, 0.9);
+}
+
+/* ==========================================================================
+   Theme: Terminal
+   ========================================================================== */
+
+[data-theme="terminal"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #0f0f0f;
+  --bg-card: #111111;
+  --bg-card-hover: #1a1a1a;
+
+  --text-primary: #33ff33;
+  --text-secondary: #22aa22;
+  --text-muted: #117711;
+
+  --accent: #00ff41;
+  --accent-glow: #00ff4166;
+  --accent-dim: #00ff4133;
+
+  --border: #1a3a1a;
+  --border-hover: #2a5a2a;
+
+  --nav-bg: rgba(10, 10, 10, 0.92);
+
+  --font-sans: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+[data-theme="terminal"] body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.03) 2px,
+    rgba(0, 255, 65, 0.03) 4px
+  );
 }
 
 /* Reset */
@@ -70,7 +140,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 2.5rem;
-  background: rgba(10, 10, 15, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
@@ -118,6 +188,28 @@ body {
 
 .nav-data-link:hover {
   opacity: 1 !important;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
 }
 
 /* ==========================================================================
@@ -308,7 +400,7 @@ body {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
 
@@ -328,6 +420,7 @@ body {
 }
 
 .showcase-item.featured {
+  grid-column: 1 / -1;
   border-color: var(--accent-dim);
 }
 
@@ -382,6 +475,67 @@ body {
 
 .showcase-link.live:hover {
   text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.showcase-link.soon {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Showcase tech tags */
+.showcase-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.showcase-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* Showcase module highlights */
+.showcase-modules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.showcase-module {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.showcase-module::before {
+  content: '>';
+  margin-right: 0.3rem;
+  opacity: 0.5;
+}
+
+/* Badge variants */
+.badge-platform {
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.badge-web {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.badge-fiction {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
 }
 
 /* ==========================================================================
@@ -847,6 +1001,14 @@ body {
 
   .np-controls {
     justify-content: center;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-item.featured {
+    grid-column: auto;
   }
 
   .gallery-grid {

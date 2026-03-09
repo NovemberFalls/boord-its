@@ -15,16 +15,33 @@
   let mouse = { x: null, y: null };
   let animationId;
 
+  const THEME_COLORS = {
+    obsidian: {
+      nodeColor: 'rgba(230, 168, 23, 0.4)',
+      rgb: [230, 168, 23],
+    },
+    light: {
+      nodeColor: 'rgba(180, 130, 10, 0.3)',
+      rgb: [180, 130, 10],
+    },
+    terminal: {
+      nodeColor: 'rgba(0, 255, 65, 0.4)',
+      rgb: [0, 255, 65],
+    },
+  };
+
+  let currentColors = THEME_COLORS.obsidian;
+
+  window.updateCanvasColors = function (theme) {
+    currentColors = THEME_COLORS[theme] || THEME_COLORS.obsidian;
+  };
+
   const CONFIG = {
     nodeCount: 80,
     nodeRadius: 1.5,
     connectionDistance: 180,
     mouseInfluence: 250,
     speed: 0.3,
-    nodeColor: 'rgba(230, 168, 23, 0.4)',      // accent amber
-    lineColor: 'rgba(230, 168, 23, 0.08)',
-    lineColorActive: 'rgba(230, 168, 23, 0.2)',
-    bgDotColor: 'rgba(136, 136, 160, 0.03)',
   };
 
   function resize() {
@@ -86,12 +103,13 @@
             isNearMouse = mouseDist < CONFIG.mouseInfluence;
           }
 
+          const [r, g, b] = currentColors.rgb;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
           ctx.strokeStyle = isNearMouse
-            ? `rgba(230, 168, 23, ${opacity * 0.25})`
-            : `rgba(230, 168, 23, ${opacity * 0.08})`;
+            ? `rgba(${r}, ${g}, ${b}, ${opacity * 0.25})`
+            : `rgba(${r}, ${g}, ${b}, ${opacity * 0.08})`;
           ctx.lineWidth = isNearMouse ? 1 : 0.5;
           ctx.stroke();
         }
@@ -115,10 +133,11 @@
       }
 
       // Outer glow
+      const [r, g, b] = currentColors.rgb;
       if (glowAmount > 0) {
         ctx.beginPath();
         ctx.arc(node.x, node.y, radius + 4 * glowAmount, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(230, 168, 23, ${glowAmount * 0.15})`;
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${glowAmount * 0.15})`;
         ctx.fill();
       }
 
@@ -126,8 +145,8 @@
       ctx.beginPath();
       ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
       ctx.fillStyle = glowAmount > 0
-        ? `rgba(230, 168, 23, ${0.4 + glowAmount * 0.5})`
-        : CONFIG.nodeColor;
+        ? `rgba(${r}, ${g}, ${b}, ${0.4 + glowAmount * 0.5})`
+        : currentColors.nodeColor;
       ctx.fill();
     }
   }
@@ -162,6 +181,66 @@
 
 
 // ==========================================================================
+// Theme Switcher
+// ==========================================================================
+
+(function () {
+  const THEMES = ['obsidian', 'light', 'terminal'];
+  const THEME_ICONS = {
+    obsidian: '\u263E',   // crescent moon
+    light: '\u2600',      // sun
+    terminal: '>_',
+  };
+  const STORAGE_KEY = 'bits-theme';
+
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('themeIcon');
+  if (!toggle) return;
+
+  function getSystemPreference() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light';
+    }
+    return 'obsidian';
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'obsidian') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+    icon.textContent = THEME_ICONS[theme];
+    if (window.updateCanvasColors) {
+      window.updateCanvasColors(theme);
+    }
+  }
+
+  function cycleTheme() {
+    const current = localStorage.getItem(STORAGE_KEY) || getSystemPreference();
+    const currentIndex = THEMES.indexOf(current);
+    const next = THEMES[(currentIndex + 1) % THEMES.length];
+    localStorage.setItem(STORAGE_KEY, next);
+    applyTheme(next);
+  }
+
+  // Initialize
+  const saved = localStorage.getItem(STORAGE_KEY);
+  const initial = saved || getSystemPreference();
+  applyTheme(initial);
+
+  toggle.addEventListener('click', cycleTheme);
+
+  // Listen for OS theme changes (only if no manual override)
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      applyTheme(e.matches ? 'light' : 'obsidian');
+    }
+  });
+})();
+
+
+// ==========================================================================
 // Typewriter Effect
 // ==========================================================================
 
@@ -172,6 +251,9 @@
     'claude.build("landing_page")',
     'bits.ship("everything")',
     'l2karma.deploy("game_server")',
+    'order.deploy("voice_server")',
+    'pipeline.run("etl_sync")',
+    'duskfall.write("chapter_04")',
   ];
 
   const el = document.getElementById('typewriter');

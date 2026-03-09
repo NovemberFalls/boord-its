@@ -12,17 +12,35 @@ Landing page for **Bits, LLC** — a one-person AI-powered creative lab.
 | **Stack** | Tool cards — Suno, Midjourney, Claude, GPT |
 | **Music** | Custom audio player with 9 AI-generated tracks, genre filters, transport controls |
 | **Gallery** | 16 Midjourney character images with lightbox viewer |
-| **Showcase** | Featured projects — L2Karma.org, Data Pipelines (coming soon) |
+| **Showcase** | Featured projects — Order, Data Pipelines, L2Karma, Duskfall |
 | **About** | Company info |
 
-## Design System
+## Showcase Projects
 
-**"Obsidian Wasp"** — dark developer aesthetic with amber accents.
+| Project | Badge | Description | Link |
+|---------|-------|-------------|------|
+| **Order** | Platform | Next-gen Discord replacement — Rust/SolidJS/Tauri with voice/video, forums, wiki, kanban, calendar, character sheets | [order.boord-its.com](https://order.boord-its.com) |
+| **Data Pipelines** | Data | Production ETL integrating POS, loyalty, BI, and cloud APIs. Monitoring dashboard + AI reports | Internal |
+| **L2Karma** | Web | Lineage 2 game server with wiki, parse, and community tools | [l2karma.org](https://l2karma.org) |
+| **Duskfall** | Fiction | Grimdark siege fantasy novel | Coming soon |
 
-- **Background**: `#0a0a0f` (near-black)
-- **Accent**: `#e6a817` (amber/gold)
+## Theme System
+
+Three switchable themes via a toggle in the nav bar. Selection persists in `localStorage` and respects `prefers-color-scheme` on first visit.
+
+| Theme | Description |
+|-------|-------------|
+| **Obsidian Wasp** | Dark developer aesthetic with amber accents (`#e6a817`) — default |
+| **Light** | Clean light mode with darkened amber (`#c48a0a`) for WCAG contrast |
+| **Terminal** | Green-on-black hacker aesthetic (`#00ff41`), all-monospace, CRT scanline overlay |
+
+Themes are implemented via CSS custom properties on `:root` with `[data-theme]` attribute overrides. The canvas node graph adapts its colors per theme.
+
+## Design
+
 - **Fonts**: JetBrains Mono (headings/code), Inter (body)
 - **Effects**: Floating node-graph canvas, scroll-reveal animations, glow-on-hover cards
+- **Typewriter**: 8 cycling phrases covering all projects and tools
 
 ## Tech
 
@@ -36,8 +54,8 @@ Landing page for **Bits, LLC** — a one-person AI-powered creative lab.
 ```
 boord-its/
 ├── index.html              # Main page
-├── styles.css              # Obsidian Wasp theme
-├── script.js               # Canvas animation, typewriter, player, lightbox
+├── styles.css              # Theme system + all styles
+├── script.js               # Canvas, themes, typewriter, player, lightbox
 ├── wrangler.json           # Cloudflare Worker config
 ├── _headers                # Security headers
 ├── _redirects              # Redirect rules (empty)
@@ -69,6 +87,8 @@ cp -r assets public/
 # 3. Deploy
 npx wrangler deploy
 ```
+
+Cloudflare account: `lenboord@gmail.com` (Account ID: `e25230689cb8fdc7b479bc25f6437500`)
 
 ## Adding Media
 

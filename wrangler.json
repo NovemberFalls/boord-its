@@ -1,7 +1,14 @@
 {
   "name": "boord-its",
   "compatibility_date": "2025-01-01",
+  "workers_dev": true,
   "assets": {
     "directory": "./public"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "boord-its.com",
+      "custom_domain": true
+    }
+  ]
 }
