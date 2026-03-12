@@ -20,7 +20,7 @@ Landing page for **Bits, LLC** — a one-person AI-powered creative lab.
 | Project | Badge | Description | Link |
 |---------|-------|-------------|------|
 | **Order** | Platform | Next-gen Discord replacement — Rust/SolidJS/Tauri with voice/video, forums, wiki, kanban, calendar, Character Engine | [order.boord-its.com](https://order.boord-its.com) |
-| **Reporting Engine** | SaaS | Self-hosted reporting platform with AI-powered financial analysis, BYO dashboards, multi-tenant DB connections | [reporting.boord-its.com](https://reporting.boord-its.com) |
+| **Reporting Engine** | SaaS | Self-hosted Power BI replacement — 16 chart types, drag-and-drop dashboard builder, AI financial analysis, multi-tenant DB connections | [reporting.boord-its.com](https://reporting.boord-its.com) |
 | **Character Engine** | AI | Conversational AI for talking with characters, self-discovery, personal emulation, and digital imprints | Coming soon |
 | **Data Pipelines** | Data | Production ETL integrating POS, loyalty, BI, and cloud APIs. Monitoring dashboard + AI reports | Internal |
 | **L2Karma** | Web | Lineage 2 game server with wiki, parse, and community tools | [l2karma.org](https://l2karma.org) |
