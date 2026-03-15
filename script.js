@@ -313,7 +313,7 @@
     { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
   );
 
-  document.querySelectorAll('.stack-card, .showcase-item, .gallery-item').forEach((el) => {
+  document.querySelectorAll('.stack-card, .showcase-item, .gallery-item, .roadmap-card, .rule').forEach((el) => {
     observer.observe(el);
   });
 })();

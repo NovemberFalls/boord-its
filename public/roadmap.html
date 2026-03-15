@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap | Bits, LLC</title>
+  <meta name="description" content="What we're building and where each project stands. Six products, one at a time.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="nodeGraph"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/" class="nav-logo" style="text-decoration:none;">
+      <span class="logo-bracket">{</span>
+      <span class="logo-text">bits</span>
+      <span class="logo-bracket">}</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#stack">Stack</a>
+      <a href="/#music">Music</a>
+      <a href="/#gallery">Gallery</a>
+      <a href="/#showcase">Showcase</a>
+      <a href="/roadmap" class="nav-active">Roadmap</a>
+      <button class="theme-toggle" id="themeToggle" title="Switch theme">
+        <span id="themeIcon">&#9790;</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Roadmap Hero -->
+  <section class="roadmap-hero">
+    <div class="roadmap-hero-content">
+      <p class="hero-tag">// roadmap</p>
+      <h1 class="hero-title">
+        What we're <span class="glow">building</span>.
+      </h1>
+      <p class="hero-sub">
+        Six products. One at a time. Full focus until it ships.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Rules -->
+  <section class="roadmap-section">
+    <div class="roadmap-rules">
+      <div class="rule">
+        <span class="rule-num">01</span>
+        <div>
+          <h4>One Active Project</h4>
+          <p>Full creative and engineering energy on one project. Everything else gets bug fixes only.</p>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-num">02</span>
+        <div>
+          <h4>Ship Before Moving On</h4>
+          <p>Each project has a definition of done. No skipping ahead.</p>
+        </div>
+      </div>
+      <div class="rule">
+        <span class="rule-num">03</span>
+        <div>
+          <h4>Full Focus, No Exceptions</h4>
+          <p>No context switching. No side channels. When it's your turn, it's your turn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Cards -->
+  <section class="roadmap-section">
+    <h2 class="section-title"><span class="accent">#</span> Launch Order</h2>
+    <p class="section-sub">Each project ships in sequence. Here's where they stand.</p>
+
+    <div class="roadmap-grid">
+
+      <!-- 1. Cockpit -->
+      <div class="roadmap-card active-project">
+        <div class="roadmap-card-header">
+          <div class="roadmap-order">01</div>
+          <div class="roadmap-card-title">
+            <h3>Cockpit</h3>
+            <p class="roadmap-oneliner">Multi-session terminal manager for Claude Code</p>
+          </div>
+          <div class="roadmap-badges">
+            <span class="stage-badge stage-active">Active</span>
+            <span class="type-badge type-oss">Open Source</span>
+          </div>
+        </div>
+        <div class="roadmap-progress">
+          <div class="progress-label">
+            <span>Ship Progress</span>
+            <span class="progress-pct">75%</span>
+          </div>
+          <div class="roadmap-bar">
+            <div class="roadmap-bar-fill" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="roadmap-criteria">
+          <div class="criteria-item done">MIT license decided</div>
+          <div class="criteria-item done">Core features working</div>
+          <div class="criteria-item done">Desktop app + installer built</div>
+          <div class="criteria-item done">Cloud relay + admin panel</div>
+          <div class="criteria-item done">Terminal zoom, favicon, UI polish</div>
+          <div class="criteria-item pending">Update license file</div>
+          <div class="criteria-item pending">Clean orphaned code</div>
+          <div class="criteria-item pending">Hosted deployment (cockpit.boord-its.com)</div>
+        </div>
+        <div class="roadmap-tags">
+          <span class="showcase-tag">FastAPI</span>
+          <span class="showcase-tag">React</span>
+          <span class="showcase-tag">xterm.js</span>
+          <span class="showcase-tag">Tauri 2</span>
+          <span class="showcase-tag">ConPTY</span>
+        </div>
+        <div class="roadmap-card-footer">
+          <span class="roadmap-scope">Windows-only v1 &middot; NovemberFalls &middot; Organic growth</span>
+          <a href="https://github.com/NovemberFalls/claude-cockpit" target="_blank" class="showcase-link live">GitHub &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 2. Order -->
+      <div class="roadmap-card">
+        <div class="roadmap-card-header">
+          <div class="roadmap-order">02</div>
+          <div class="roadmap-card-title">
+            <h3>Order</h3>
+            <p class="roadmap-oneliner">Next-gen Discord replacement for communities</p>
+          </div>
+          <div class="roadmap-badges">
+            <span class="stage-badge stage-waiting">Up Next</span>
+            <span class="type-badge type-saas">SaaS</span>
+          </div>
+        </div>
+        <div class="roadmap-progress">
+          <div class="progress-label">
+            <span>Ship Progress</span>
+            <span class="progress-pct">70%</span>
+          </div>
+          <div class="roadmap-bar">
+            <div class="roadmap-bar-fill" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="roadmap-criteria">
+          <div class="criteria-item done">Core platform shipped (text, voice, video, forums, wiki, kanban)</div>
+          <div class="criteria-item done">Premium gating + Stripe</div>
+          <div class="criteria-item done">Landing page + ToS</div>
+          <div class="criteria-item pending">Onboarding flow</div>
+          <div class="criteria-item pending">Native mobile app</div>
+          <div class="criteria-item pending">QA sweep (blocker for real users)</div>
+        </div>
+        <div class="roadmap-tags">
+          <span class="showcase-tag">Rust</span>
+          <span class="showcase-tag">SolidJS</span>
+          <span class="showcase-tag">LiveKit</span>
+          <span class="showcase-tag">PostgreSQL</span>
+          <span class="showcase-tag">ScyllaDB</span>
+          <span class="showcase-tag">Tauri</span>
+        </div>
+        <div class="roadmap-card-footer">
+          <span class="roadmap-scope">Closed source &middot; Per-server pricing &middot; TTRPG + general</span>
+          <a href="https://order.boord-its.com" target="_blank" class="showcase-link live">Preview &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 3. Duskfall -->
+      <div class="roadmap-card">
+        <div class="roadmap-card-header">
+          <div class="roadmap-order">03</div>
+          <div class="roadmap-card-title">
+            <h3>Duskfall</h3>
+            <p class="roadmap-oneliner">Grimdark siege novel &mdash; GoT meets LotR meets Dark Tower</p>
+          </div>
+          <div class="roadmap-badges">
+            <span class="stage-badge stage-queued">Queued</span>
+            <span class="type-badge type-fiction">Fiction</span>
+          </div>
+        </div>
+        <div class="roadmap-progress">
+          <div class="progress-label">
+            <span>Manuscript Progress</span>
+            <span class="progress-pct">8%</span>
+          </div>
+          <div class="roadmap-bar">
+            <div class="roadmap-bar-fill" style="width: 8%"></div>
+          </div>
+        </div>
+        <div class="roadmap-criteria">
+          <div class="criteria-item done">C01 locked (5,845 words)</div>
+          <div class="criteria-item done">Full worldbuilding bible</div>
+          <div class="criteria-item done">Pipeline automation (draft/enhance/TTS)</div>
+          <div class="criteria-item pending">~24 chapters to draft and lock</div>
+          <div class="criteria-item pending">Beta readers</div>
+          <div class="criteria-item pending">Self-publish via Amazon KDP</div>
+        </div>
+        <div class="roadmap-tags">
+          <span class="showcase-tag">Claude Pipeline</span>
+          <span class="showcase-tag">Edge TTS</span>
+          <span class="showcase-tag">Markdown</span>
+          <span class="showcase-tag">Obsidian</span>
+        </div>
+        <div class="roadmap-card-footer">
+          <span class="roadmap-scope">100K&ndash;130K+ words &middot; Self-publish KDP &middot; Full focus</span>
+          <span class="showcase-link soon">Coming soon &rarr;</span>
+        </div>
+      </div>
+
+      <!-- 4. Reporting Engine -->
+      <div class="roadmap-card">
+        <div class="roadmap-card-header">
+          <div class="roadmap-order">04</div>
+          <div class="roadmap-card-title">
+            <h3>Reporting Engine</h3>
+            <p class="roadmap-oneliner">Power BI replacement with Claude AI built in</p>
+          </div>
+          <div class="roadmap-badges">
+            <span class="stage-badge stage-queued">Queued</span>
+            <span class="type-badge type-saas">SaaS</span>
+          </div>
+        </div>
+        <div class="roadmap-progress">
+          <div class="progress-label">
+            <span>Ship Progress</span>
+            <span class="progress-pct">45%</span>
+          </div>
+          <div class="roadmap-bar">
+            <div class="roadmap-bar-fill" style="width: 45%"></div>
+          </div>
+        </div>
+        <div class="roadmap-criteria">
+          <div class="criteria-item done">v2 semantic model (118 endpoints)</div>
+          <div class="criteria-item done">16 chart types + drag-and-drop dashboards</div>
+          <div class="criteria-item done">Multi-tenant DB connections</div>
+          <div class="criteria-item pending">Frontend v2 migration (big bang)</div>
+          <div class="criteria-item pending">Claude AI integration</div>
+          <div class="criteria-item pending">Dashboard sharing + export</div>
+        </div>
+        <div class="roadmap-tags">
+          <span class="showcase-tag">Flask</span>
+          <span class="showcase-tag">React</span>
+          <span class="showcase-tag">ECharts</span>
+          <span class="showcase-tag">PostgreSQL</span>
+          <span class="showcase-tag">Claude API</span>
+        </div>
+        <div class="roadmap-card-footer">
+          <span class="roadmap-scope">Cloud-only &middot; Free tier + per-user pricing &middot; SMBs</span>
+          <a href="https://reporting.boord-its.com" target="_blank" class="showcase-link live">Preview &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 5. Character Engine -->
+      <div class="roadmap-card">
+        <div class="roadmap-card-header">
+          <div class="roadmap-order">05</div>
+          <div class="roadmap-card-title">
+            <h3>Character Engine</h3>
+            <p class="roadmap-oneliner">Talk to characters you'd never meet &mdash; or leave an imprint of yourself</p>
+          </div>
+          <div class="roadmap-badges">
+            <span class="stage-badge stage-queued">Queued</span>
+            <span class="type-badge type-ai">AI</span>
+          </div>
+        </div>
+        <div class="roadmap-progress">
+          <div class="progress-label">
+            <span>Ship Progress</span>
+            <span class="progress-pct">55%</span>
+          </div>
+          <div class="roadmap-bar">
+            <div class="roadmap-bar-fill" style="width: 55%"></div>
+          </div>
+        </div>
+        <div class="roadmap-criteria">
+          <div class="criteria-item done">99 characters deployed</div>
+          <div class="criteria-item done">Memory + evolution + autonomy</div>
+          <div class="criteria-item done">Architect AI character builder</div>
+          <div class="criteria-item pending">Rate limiting + usage tiers</div>
+          <div class="criteria-item pending">Stripe payments</div>
+          <div class="criteria-item pending">Public launch (Imprint as headline)</div>
+        </div>
+        <div class="roadmap-tags">
+          <span class="showcase-tag">Next.js 16</span>
+          <span class="showcase-tag">Claude Haiku</span>
+          <span class="showcase-tag">PostgreSQL</span>
+          <span class="showcase-tag">Auth.js</span>
+        </div>
+        <div class="roadmap-card-footer">
+          <span class="roadmap-scope">Cloud-only &middot; Free + Pro + credits &middot; Web-first</span>
+          <a href="https://characters.boord-its.com" target="_blank" class="showcase-link live">Preview &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 6. Finance Engine -->
+      <div class="roadmap-card">
+        <div class="roadmap-card-header">
+          <div class="roadmap-order">06</div>
+          <div class="roadmap-card-title">
+            <h3>Finance Engine</h3>
+            <p class="roadmap-oneliner">Personal finance tracker with AI-powered categorization</p>
+          </div>
+          <div class="roadmap-badges">
+            <span class="stage-badge stage-queued">Queued</span>
+            <span class="type-badge type-personal">Personal</span>
+          </div>
+        </div>
+        <div class="roadmap-progress">
+          <div class="progress-label">
+            <span>Ship Progress</span>
+            <span class="progress-pct">80%</span>
+          </div>
+          <div class="roadmap-bar">
+            <div class="roadmap-bar-fill" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="roadmap-criteria">
+          <div class="criteria-item done">Full web UI + dashboard deployed</div>
+          <div class="criteria-item done">AI financial advisor</div>
+          <div class="criteria-item done">3-tier categorization (rules + regex + Claude)</div>
+          <div class="criteria-item done">Budget tracking + review queue</div>
+          <div class="criteria-item pending">Mobile-responsive polish</div>
+          <div class="criteria-item pending">More bank parsers</div>
+        </div>
+        <div class="roadmap-tags">
+          <span class="showcase-tag">Next.js 16</span>
+          <span class="showcase-tag">Claude AI</span>
+          <span class="showcase-tag">PostgreSQL</span>
+          <span class="showcase-tag">Recharts</span>
+        </div>
+        <div class="roadmap-card-footer">
+          <span class="roadmap-scope">Desktop-first &middot; AI-first parsing &middot; Personal tool</span>
+          <span class="showcase-link soon">Internal &rarr;</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-bracket">{</span>
+        <span class="logo-text">bits</span>
+        <span class="logo-bracket">}</span>
+        <span class="footer-llc">, llc</span>
+      </div>
+      <p class="footer-copy">&copy; 2025&ndash;2026 Bits, LLC. Built with AI.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
